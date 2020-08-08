@@ -13,6 +13,9 @@ const state = {
     expiry: localStorage.expiry,
     uid: localStorage.uid
   },
+  board: {
+    tasks: []
+  },
   currentUser: null
 };
 
