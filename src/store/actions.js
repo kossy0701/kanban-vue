@@ -1,5 +1,5 @@
 import * as types from "./mutation-types";
-import { Auth } from "../api";
+import { Auth, Task } from "../api";
 
 export default {
   login: ({ commit }, authInfo) => {
@@ -26,6 +26,16 @@ export default {
         localStorage.removeItem("expiry");
         localStorage.removeItem("uid");
         commit(types.SET_CURRENT_USER, null);
+      })
+      .catch(err => {
+        throw err;
+      });
+  },
+
+  fetchTaskLists: ({ commit }) => {
+    return Task.getTasks()
+      .then(({ tasks }) => {
+        commit(types.FETCH_TASK_LISTS, tasks);
       })
       .catch(err => {
         throw err;

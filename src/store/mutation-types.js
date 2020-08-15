@@ -1,3 +1,4 @@
 export const AUTH_LOGIN = "AUTH_LOGIN";
 export const AUTH_LOGOUT = "AUTH_LOGOUT";
 export const SET_CURRENT_USER = "SET_CURRENT_USER";
+export const FETCH_TASK_LISTS = "FETCH_TASK_LISTS";
